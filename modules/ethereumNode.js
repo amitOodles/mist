@@ -10,6 +10,8 @@ const logRotate = require('log-rotate');
 const EventEmitter = require('events').EventEmitter;
 const Sockets = require('./socketManager');
 const ClientBinaryManager = require('./clientBinaryManager');
+const path = require('path');
+
 
 const DEFAULT_NODE_TYPE = 'geth';
 const DEFAULT_NETWORK = 'main';
@@ -350,18 +352,22 @@ class EthereumNode extends EventEmitter {
 
                 let args;
 
-                // START TESTNET
-                if (network == 'test') {
-                    args = (nodeType === 'geth')
-                        ? ['--testnet', '--fast', '--ipcpath', Settings.rpcIpcPath]
-                        : ['--morden', '--unsafe-transactions'];
-                }
-                // START MAINNET
-                else {
-                    args = (nodeType === 'geth')
-                        ? ['--fast', '--cache', ((process.arch === 'x64') ? '1024' : '512')]
-                        : ['--unsafe-transactions'];
-                }
+                // // START TESTNET
+                // if (network == 'test') {
+                //     args = (nodeType === 'geth')
+                //         ? ['--testnet', '--fast', '--ipcpath', Settings.rpcIpcPath]
+                //         : ['--morden', '--unsafe-transactions'];
+                // }
+                // // START MAINNET
+                // else {
+                //     args = (nodeType === 'geth')
+                //         ? ['--fast', '--cache', ((process.arch === 'x64') ? '1024' : '512')]
+                //         : ['--unsafe-transactions'];
+                // }
+
+                args = (nodeType === 'geth')
+                    ? ['--fast', '--cache', '1024','--networkid', '1401', '--port', '30302', '--datadir', path.join(__dirname + "/../../../../DaxxWallet")]
+                    : ['--unsafe-transactions'];
 
                 const nodeOptions = Settings.nodeOptions;
 
