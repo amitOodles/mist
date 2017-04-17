@@ -4,7 +4,7 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-less@2.7.8
+less
 tap:i18n
 jeeeyul:moment-with-langs
 ostrio:templatehelpers
@@ -30,7 +30,7 @@ mobile-experience@1.0.4
 mongo@1.1.14
 blaze-html-templates
 session@1.1.7
-jquery@1.11.10
+jquery
 tracker@1.1.1
 logging@1.1.16
 reload@1.1.11

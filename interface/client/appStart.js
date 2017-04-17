@@ -50,6 +50,14 @@ mistInit = function(){
 Meteor.startup(function(){
     console.info('Meteor starting up...');
 
+  $.getScript( "js/jquery.min.js", function(data) {
+      //console.log( data );
+    });
+
+  $.getScript( "js/qrcode.min.js", function(data) {
+    //console.log( data );
+  });
+
     if (!location.hash) {
         EthAccounts.init();
         mistInit();

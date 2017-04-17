@@ -21,6 +21,11 @@
                 "paste": "Paste",
                 "selectAll": "Select all"
             },
+            "transfer": {
+                "label": "Transfer",
+                "send": "Send",
+                "receive": "Receive"
+            },
             "view": {
                 "label": "View",
                 "fullscreen": "Toggle Fullscreen",
@@ -50,7 +55,9 @@
                 "newAccount": "New account",
                 "backup": "Backup",
                 "backupKeyStore": "Accounts",
-                "backupMist": "Application Data"
+                "backupMist": "Application Data",
+                "view":"View",
+                "import":"Import"
             },
             "develop": {
                 "label": "Develop",
